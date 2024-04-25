@@ -39,6 +39,7 @@ function run_tests() {
     BUILD_CMD="apt update && apt install -y $BUILD_PACKAGES && \
     $BUILD_CMD"
   fi
+  sudo apt install -y docker.io
   docker run --rm \
     -w /go/src/github.com/google/cadvisor \
     -v ${PWD}:/go/src/github.com/google/cadvisor \
