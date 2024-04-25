@@ -20,7 +20,7 @@ jobs:
     - name: Run presubmit checks
       run: |
         source ${{ matrix.environment-variables }}
-        if [[ "${BUILD_PACKAGES}" != "" ]]; then sudo apt-get -y update; fi
+        if [[ "${BUILD_PACKAGES}" != "" ]]; then sudo apt-get -y update; sudo apt-get install pkgconfig; fi
         make -e presubmit
     - name: Run tests
       env:
